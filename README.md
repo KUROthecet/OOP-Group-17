@@ -1,129 +1,149 @@
-Seventeen's Store - Computer Sales Website
-Project Overview
-This project is a Java-based web application developed as an assignment for the Object-Oriented Programming (OOP) course. It is an online store specializing in computer sales, featuring a user-friendly interface, an integrated chatbot powered by the Gemini API for customer support, and database connectivity for product management. The project is built using the free version of IntelliJ IDEA.
-Features
+# Seventeen’s Store
 
-Product Browsing: Users can explore a catalog of computers with detailed specifications.
-Search and Filter: Advanced search and filtering options to find products based on specific needs.
-Chatbot Support: Integrated chatbot using the Gemini API to answer user queries.
-Responsive Interface: Modern and intuitive UI built with JavaFX.
-Database Integration: Fetches product data from a local database API.
+[![Java 21](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/)  
+[![JavaFX 21](https://img.shields.io/badge/JavaFX-21-green)](https://openjfx.io/)  
+[![Maven](https://img.shields.io/badge/Maven-3.8.8-orange)](https://maven.apache.org/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
-Technologies Used
+---
 
-Java 21: Core programming language.
-JavaFX 21: For building the graphical user interface.
-Maven: Dependency management and build automation.
-Jackson 2.15.2: JSON serialization and deserialization.
-OkHttp 4.10.0: HTTP request handling.
-Gemini API: Powers the chatbot functionality.
-IntelliJ IDEA (Community Edition): IDE used for development.
+## Table of Contents
 
-Project Structure
-The project follows a standard Maven structure with the following key directories and files:
+1. [Project Overview](#project-overview)  
+2. [Features](#features)  
+3. [Technologies](#technologies)  
+4. [Project Structure](#project-structure)  
+5. [Setup & Run](#setup--run)  
+6. [Usage](#usage)  
+7. [Contributing](#contributing)  
+8. [License](#license)
 
-UI-main [javafx-ui]/
-.idea/
-src/
-main/
-java/
-application/
-model/
-ChatMessage.java
-Product.java
-Review.java
+---
+
+## Project Overview
+
+Seventeen’s Store is a Java-based web application developed for an Object-Oriented Programming (OOP) course assignment.  
+It functions as an online computer store with a modern JavaFX UI, integrated chatbot powered by the Gemini API, and a RESTful database backend for product management.
+
+---
+
+## Features
+
+- **Product Catalog**: Browse a range of computer models with detailed specs.  
+- **Search & Filter**: Advanced search by model, price range, CPU, RAM, and more.  
+- **Chatbot Support**: Real-time customer assistance via Gemini API chatbot.  
+- **Responsive UI**: Sleek and responsive interface built with JavaFX.  
+- **Database Integration**: CRUD operations through a local REST API.
+
+---
+
+## Technologies
+
+| Technology            | Version     | Purpose                           |
+|-----------------------|-------------|-----------------------------------|
+| Java                  | 21          | Core programming language         |
+| JavaFX                | 21          | User interface framework          |
+| Maven                 | 3.8.x       | Build & dependency management     |
+| Jackson               | 2.15.2      | JSON serialization/deserialization|
+| OkHttp                | 4.10.0      | HTTP client                       |
+| Gemini API            | —           | Chatbot backend                   |
+| IntelliJ IDEA CE      | —           | Integrated development environment|
+
+---
+
+## Project Structure
+
+```text
+UI-main [javafx-ui]
+├── .idea
+├── pom.xml
+└── src
+    └── main
+        ├── java
+        │   └── application
+        │       ├── model
+        │       │   ├── ChatMessage.java
+        │       │   ├── Product.java
+        │       │   └── Review.java
+        │       ├── service
+        │       │   ├── ChatbotService.java
+        │       │   ├── GeminiService.java
+        │       │   ├── ProductClient.java
+        │       │   └── ProductService.java
+        │       └── ui
+        │           ├── common
+        │           │   └── LabelFactory.java
+        │           ├── components
+        │           │   ├── ChatbotPanelFactory.java
+        │           │   ├── ChatBubbleFactory.java
+        │           │   ├── NavBarFactory.java
+        │           │   ├── ProductCardFactory.java
+        │           │   └── SearchFormFactory.java
+        │           └── layout
+        │               └── Main.java
+        └── resources
+            └── style.css
 
 
-service/
-ChatbotService.java
-GeminiService.java
-ProductClient.java
-ProductService.java
+Setup & Run
+Clone the repository
 
-
-ui/
-common/
-LabelFactory.java
-
-
-components/
-ChatbotPanelFactory.java
-ChatBubbleFactory.java
-NavBarFactory.java
-ProductCardFactory.java
-SearchFormFactory.java
-
-
-layout/
-Main.java
-
-
-
-
-
-
-
-
-resources/
-style.css
-
-
-
-
-
-
-pom.xml
-
-
-
-Setup Instructions
-To set up and run the project locally, follow these steps:
-
-Clone the Repository:
+bash
+Copy
+Edit
 git clone https://github.com/your-repo/seventeens-store.git
 cd seventeens-store
+Build & install dependencies
 
+bash
+Copy
+Edit
+mvn clean install
+Configure Database
 
-Install Dependencies:Ensure Maven is installed, then run:
-mvn install
+Ensure your local REST API is running at http://localhost:8081/api/building.
 
+Verify connectivity before launching the app.
 
-Set Up the Database:
+Set API Key
 
-The application connects to a local database API at http://localhost:8081/api/building.
-Ensure the database server is running and accessible.
+Open GeminiService.java.
 
+Replace the placeholder API_KEY constant with your Gemini API key.
 
-Configure API Key:
+Run the Application
 
-The chatbot uses the Gemini API, which requires an API key.
-The key is currently hardcoded in GeminiService.java as AIzaSyCOmuIjXZN--2VqFpbpiX1sKPKeL3U6fuk. Verify its validity or replace it with your own key.
+Via Maven
 
+bash
+Copy
+Edit
+mvn javafx:run
+Via IntelliJ IDEA
 
-Run the Application:
-
-Using Maven:mvn javafx:run
-
-
-Alternatively, open the project in IntelliJ IDEA and run the Main class.
-
-
+Open the project, locate application.layout.Main, and click Run.
 
 Usage
+Navigate: Use the top NavBar to switch pages.
 
-Navigation: Use the navigation bar to return to the homepage.
-Search: Enter keywords in the search field to find products by model.
-Filter: Click the "Filter" button to access and apply advanced filters.
-Chatbot: Click the "💬 Chat" button to interact with the chatbot for assistance.
-Product Details: Hover over product cards to view detailed specifications and reviews.
+Search: Enter keywords (model, brand) in the search field.
+
+Filter: Click Filter to apply advanced filters (price, specs).
+
+Chat: Click the 💬 Chat button to open the chatbot.
+
+Details: Hover over product cards for specs and user reviews.
 
 Contributing
-We welcome contributions! To contribute, please follow these steps:
+Contributions are welcome! Please follow these steps:
 
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Commit your changes and push them to your fork.
-Submit a pull request with a detailed description of your changes.
+Fork this repository.
+
+Create a new branch (feature/your-feature or fix/issue-number).
+
+Commit your changes and push to your fork.
+
+Open a Pull Request with a clear description of your changes.
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
