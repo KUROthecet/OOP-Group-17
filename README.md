@@ -21,35 +21,60 @@ IntelliJ IDEA (Community Edition): IDE used for development.
 
 Project Structure
 The project follows a standard Maven structure with the following key directories and files:
-UI-main [javafx-ui]
-├── .idea
-├── src
-│   └── main
-│       ├── java
-│       │   └── application
-│       │       ├── model
-│       │       │   ├── ChatMessage.java
-│       │       │   ├── Product.java
-│       │       │   └── Review.java
-│       │       ├── service
-│       │       │   ├── ChatbotService.java
-│       │       │   ├── GeminiService.java
-│       │       │   ├── ProductClient.java
-│       │       │   └── ProductService.java
-│       │       └── ui
-│       │           ├── common
-│       │           │   └── LabelFactory.java
-│       │           ├── components
-│       │           │   ├── ChatbotPanelFactory.java
-│       │           │   ├── ChatBubbleFactory.java
-│       │           │   ├── NavBarFactory.java
-│       │           │   ├── ProductCardFactory.java
-│       │           │   └── SearchFormFactory.java
-│       │           └── layout
-│       │               └── Main.java
-│       └── resources
-│           └── style.css
-└── pom.xml
+
+UI-main [javafx-ui]/
+.idea/
+src/
+main/
+java/
+application/
+model/
+ChatMessage.java
+Product.java
+Review.java
+
+
+service/
+ChatbotService.java
+GeminiService.java
+ProductClient.java
+ProductService.java
+
+
+ui/
+common/
+LabelFactory.java
+
+
+components/
+ChatbotPanelFactory.java
+ChatBubbleFactory.java
+NavBarFactory.java
+ProductCardFactory.java
+SearchFormFactory.java
+
+
+layout/
+Main.java
+
+
+
+
+
+
+
+
+resources/
+style.css
+
+
+
+
+
+
+pom.xml
+
+
 
 Setup Instructions
 To set up and run the project locally, follow these steps:
