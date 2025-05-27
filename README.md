@@ -1,36 +1,26 @@
-🖥️ Seventeen's Store - Website Bán Máy Tính
-Ứng dụng web JavaFX hỗ trợ bán máy tính, tích hợp chatbot AI và kết nối cơ sở dữ liệu.
+Seventeen's Store - Computer Sales Website
+Project Overview
+This project is a Java-based web application developed as an assignment for the Object-Oriented Programming (OOP) course. It is an online store specializing in computer sales, featuring a user-friendly interface, an integrated chatbot powered by the Gemini API for customer support, and database connectivity for product management. The project is built using the free version of IntelliJ IDEA.
+Features
 
-📌 Tổng Quan Dự Án
-Seventeen's Store là một dự án ứng dụng web được phát triển bằng Java, là bài tập học phần Lập trình Hướng Đối tượng (OOP). Ứng dụng mô phỏng một cửa hàng trực tuyến bán máy tính, giao diện thân thiện với người dùng, tích hợp chatbot sử dụng Gemini API và kết nối với cơ sở dữ liệu để quản lý sản phẩm.
+Product Browsing: Users can explore a catalog of computers with detailed specifications.
+Search and Filter: Advanced search and filtering options to find products based on specific needs.
+Chatbot Support: Integrated chatbot using the Gemini API to answer user queries.
+Responsive Interface: Modern and intuitive UI built with JavaFX.
+Database Integration: Fetches product data from a local database API.
 
-IDE: IntelliJ IDEA (Community Edition)
+Technologies Used
 
-✨ Tính Năng Nổi Bật
-🔍 Duyệt sản phẩm: Hiển thị danh mục máy tính với thông tin chi tiết.
+Java 21: Core programming language.
+JavaFX 21: For building the graphical user interface.
+Maven: Dependency management and build automation.
+Jackson 2.15.2: JSON serialization and deserialization.
+OkHttp 4.10.0: HTTP request handling.
+Gemini API: Powers the chatbot functionality.
+IntelliJ IDEA (Community Edition): IDE used for development.
 
-🎯 Tìm kiếm & lọc: Bộ lọc nâng cao giúp tìm sản phẩm theo nhu cầu cụ thể.
-
-💬 Chatbot hỗ trợ: Tích hợp chatbot sử dụng Gemini API để hỗ trợ khách hàng.
-
-🖼️ Giao diện đáp ứng: Xây dựng bằng JavaFX với thiết kế hiện đại.
-
-🗄️ Kết nối CSDL: Truy xuất dữ liệu từ API nội bộ.
-
-🛠️ Công Nghệ Sử Dụng
-Công Nghệ	Vai Trò
-Java 21	Ngôn ngữ lập trình chính
-JavaFX 21	Giao diện người dùng đồ họa
-Maven	Quản lý phụ thuộc và build project
-Jackson 2.15.2	Xử lý JSON
-OkHttp 4.10.0	Gửi yêu cầu HTTP
-Gemini API	Hệ thống AI Chatbot
-IntelliJ IDEA	Môi trường phát triển (IDE)
-
-📁 Cấu Trúc Dự Án
-css
-Copy
-Edit
+Project Structure
+The project follows a standard Maven structure with the following key directories and files:
 UI-main [javafx-ui]
 ├── .idea
 ├── src
@@ -60,62 +50,55 @@ UI-main [javafx-ui]
 │       └── resources
 │           └── style.css
 └── pom.xml
-🚀 Hướng Dẫn Cài Đặt
-1. Clone Repository
-bash
-Copy
-Edit
+
+Setup Instructions
+To set up and run the project locally, follow these steps:
+
+Clone the Repository:
 git clone https://github.com/your-repo/seventeens-store.git
 cd seventeens-store
-2. Cài Đặt Phụ Thuộc
-Đảm bảo bạn đã cài đặt Maven
 
-bash
-Copy
-Edit
+
+Install Dependencies:Ensure Maven is installed, then run:
 mvn install
-3. Thiết Lập Cơ Sở Dữ Liệu
-Ứng dụng kết nối tới API tại:
-http://localhost:8081/api/building
 
-Đảm bảo API đang chạy trên máy cục bộ.
 
-4. Cấu Hình API Key cho Gemini
-API key mẫu được hard-code trong GeminiService.java:
+Set Up the Database:
 
-lua
-Copy
-Edit
-AIzaSyCOmuIjXZN--2VqFpbpiX1sKPKeL3U6fuk
-Thay thế bằng API key hợp lệ của bạn nếu cần.
+The application connects to a local database API at http://localhost:8081/api/building.
+Ensure the database server is running and accessible.
 
-5. Chạy Ứng Dụng
-Chạy bằng Maven:
 
-bash
-Copy
-Edit
-mvn javafx:run
-Hoặc mở trong IntelliJ IDEA và chạy Main.java
+Configure API Key:
 
-📘 Cách Sử Dụng
-Tính Năng	Hướng Dẫn Sử Dụng
-🧭 Điều hướng	Sử dụng thanh điều hướng để quay về trang chủ
-🔎 Tìm kiếm	Nhập từ khóa để tìm sản phẩm theo tên hoặc model
-🧰 Bộ lọc	Nhấn "Filter" để lọc nâng cao
-💬 Chatbot	Nhấn nút "💬 Chat" để tương tác với chatbot
-ℹ️ Chi tiết sản phẩm	Di chuột qua sản phẩm để xem cấu hình và đánh giá
+The chatbot uses the Gemini API, which requires an API key.
+The key is currently hardcoded in GeminiService.java as AIzaSyCOmuIjXZN--2VqFpbpiX1sKPKeL3U6fuk. Verify its validity or replace it with your own key.
 
-🤝 Đóng Góp
-Chúng tôi hoan nghênh mọi đóng góp!
 
-Fork repository
+Run the Application:
 
-Tạo nhánh mới: feature/your-feature-name
+Using Maven:mvn javafx:run
 
-Commit và push thay đổi
 
-Tạo Pull Request với mô tả chi tiết
+Alternatively, open the project in IntelliJ IDEA and run the Main class.
 
-📄 Giấy Phép
-Dự án được cấp phép theo MIT License.
+
+
+Usage
+
+Navigation: Use the navigation bar to return to the homepage.
+Search: Enter keywords in the search field to find products by model.
+Filter: Click the "Filter" button to access and apply advanced filters.
+Chatbot: Click the "💬 Chat" button to interact with the chatbot for assistance.
+Product Details: Hover over product cards to view detailed specifications and reviews.
+
+Contributing
+We welcome contributions! To contribute, please follow these steps:
+
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Commit your changes and push them to your fork.
+Submit a pull request with a detailed description of your changes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
